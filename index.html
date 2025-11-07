@@ -466,30 +466,42 @@
           </div>
         </div>
         <div class="reveal">
-  <form id="quoteForm" action="https://formsubmit.co/el/zowewo" method="POST" class="bg-slate-950/30 border border-slate-600/10 rounded-2xl p-5 sm:p-6 space-y-4">
+  <div class="max-w-xl mx-auto bg-slate-950/40 border border-slate-800/40 rounded-2xl p-6 sm:p-8 shadow-xl backdrop-blur-sm">
+  <form id="quoteForm" action="https://formsubmit.co/el/zowewo" method="POST" class="space-y-5">
     <input type="hidden" name="_subject" value="New quote request from Crezia website">
     <input type="hidden" name="_captcha" value="false">
     <input type="hidden" name="_template" value="table">
 
+    <h2 class="text-xl sm:text-2xl font-semibold text-white mb-4 text-center">Request a Quote</h2>
+
+    <!-- Full Name -->
     <div>
-      <label for="name" class="text-sm text-slate-100 block mb-1">Full Name</label>
-      <input type="text" id="name" name="Name" placeholder="Your name" required>
+      <label for="name" class="text-sm font-medium text-slate-200 block mb-1">Full Name</label>
+      <input type="text" id="name" name="Name" placeholder="Your full name"
+        class="w-full bg-slate-900/70 border border-slate-700/40 rounded-lg px-4 py-2.5 text-sm text-white placeholder-slate-400 outline-none focus:border-indigo-400 focus:ring-2 focus:ring-indigo-500/20 transition duration-200"
+        required>
     </div>
 
+    <!-- Email + Phone -->
     <div class="grid sm:grid-cols-2 gap-4">
       <div>
-        <label for="email" class="text-sm text-slate-100 block mb-1">Email</label>
-        <input type="email" id="email" name="Email" placeholder="you@example.com" required>
+        <label for="email" class="text-sm font-medium text-slate-200 block mb-1">Email</label>
+        <input type="email" id="email" name="Email" placeholder="you@example.com"
+          class="w-full bg-slate-900/70 border border-slate-700/40 rounded-lg px-4 py-2.5 text-sm text-white placeholder-slate-400 outline-none focus:border-indigo-400 focus:ring-2 focus:ring-indigo-500/20 transition duration-200"
+          required>
       </div>
       <div>
-        <label for="phone" class="text-sm text-slate-100 block mb-1">Phone / WhatsApp</label>
-        <input type="text" id="phone" name="Phone" placeholder="+91...">
+        <label for="phone" class="text-sm font-medium text-slate-200 block mb-1">Phone / WhatsApp</label>
+        <input type="text" id="phone" name="Phone" placeholder="+91..."
+          class="w-full bg-slate-900/70 border border-slate-700/40 rounded-lg px-4 py-2.5 text-sm text-white placeholder-slate-400 outline-none focus:border-indigo-400 focus:ring-2 focus:ring-indigo-500/20 transition duration-200">
       </div>
     </div>
 
+    <!-- Service -->
     <div>
-      <label for="service" class="text-sm text-slate-100 block mb-1">What are you looking for?</label>
-      <select id="service" name="Service" class="w-full bg-slate-950/60 border border-slate-500/20 rounded-lg text-sm px-3 py-2 outline-none focus:border-indigo-400/70 focus:ring-2 focus:ring-indigo-500/10 text-white">
+      <label for="service" class="text-sm font-medium text-slate-200 block mb-1">What are you looking for?</label>
+      <select id="service" name="Service"
+        class="w-full bg-slate-900/70 border border-slate-700/40 rounded-lg px-4 py-2.5 text-sm text-white outline-none focus:border-indigo-400 focus:ring-2 focus:ring-indigo-500/20 transition duration-200">
         <option value="Website in 7 days">Website in 7 days</option>
         <option value="Web app / SaaS">Web app / SaaS</option>
         <option value="AI tools / automation">AI tools / automation</option>
@@ -498,13 +510,21 @@
       </select>
     </div>
 
+    <!-- Message -->
     <div>
-      <label for="message" class="text-sm text-slate-100 block mb-1">Tell us about the project</label>
-      <textarea id="message" name="Message" placeholder="Short description, goals, timeline" required></textarea>
+      <label for="message" class="text-sm font-medium text-slate-200 block mb-1">Tell us about the project</label>
+      <textarea id="message" name="Message" placeholder="Short description, goals, timeline"
+        class="w-full bg-slate-900/70 border border-slate-700/40 rounded-lg px-4 py-2.5 text-sm text-white placeholder-slate-400 outline-none focus:border-indigo-400 focus:ring-2 focus:ring-indigo-500/20 transition duration-200 resize-none h-28"
+        required></textarea>
     </div>
 
-    <button type="submit" class="btn-primary w-full justify-center">Request a Quote</button>
-    <p id="formSuccess" class="text-xs text-emerald-300 hidden mt-2">Thanks! Your message has been sent.</p>
+    <!-- Submit -->
+    <button type="submit"
+      class="w-full bg-gradient-to-r from-indigo-500 to-purple-500 text-white text-sm font-medium py-2.5 rounded-xl shadow-lg hover:from-indigo-600 hover:to-purple-600 focus:ring-2 focus:ring-indigo-500/30 transition-all duration-200">
+      Request a Quote
+    </button>
+
+    <p id="formSuccess" class="text-xs text-emerald-400 hidden mt-2 text-center">✅ Thanks! Your message has been sent.</p>
   </form>
 </div>
 
@@ -513,8 +533,7 @@
   const successMsg = document.getElementById('formSuccess');
 
   form.addEventListener('submit', async function (e) {
-    e.preventDefault(); // Stop redirect
-
+    e.preventDefault();
     const formData = new FormData(form);
 
     try {
@@ -535,6 +554,7 @@
     }
   });
 </script>
+
 
       </div>
     </section>
@@ -600,3 +620,4 @@
   </script>
 </body>
 </html>
+
